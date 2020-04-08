@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="205" id="KGk-i7-Jjw" customClass="MediaCellNip" customModule="MediaFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kvm-Js-H4K">
+                        <rect key="frame" x="0.0" y="0.0" width="124" height="149.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-dB-Qao">
+                        <rect key="frame" x="129" y="0.0" width="285" height="24"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                        <color key="textColor" red="0.95686274510000002" green="0.73142461960000005" blue="0.15109655459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L9-sv-0BW" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                        <rect key="frame" x="129" y="26" width="285" height="18"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="scrollDuration">
+                                <real key="value" value="80"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFv-mb-BEX">
+                        <rect key="frame" x="0.0" y="0.0" width="124" height="149.5"/>
+                        <connections>
+                            <action selector="bouncingImageButtom:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Mpj-yl-jy1"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="kvm-Js-H4K" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1VQ-LD-Qe6"/>
+                    <constraint firstItem="BFv-mb-BEX" firstAttribute="width" secondItem="kvm-Js-H4K" secondAttribute="width" id="98b-Cg-NSa"/>
+                    <constraint firstItem="kvm-Js-H4K" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="E2E-7l-KnP"/>
+                    <constraint firstItem="KkQ-dB-Qao" firstAttribute="leading" secondItem="kvm-Js-H4K" secondAttribute="trailing" constant="5" id="FKu-w1-Lnd"/>
+                    <constraint firstItem="3L9-sv-0BW" firstAttribute="trailing" secondItem="KkQ-dB-Qao" secondAttribute="trailing" id="IwL-Yk-ti4"/>
+                    <constraint firstItem="kvm-Js-H4K" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="OR4-WH-fB5"/>
+                    <constraint firstAttribute="trailing" secondItem="KkQ-dB-Qao" secondAttribute="trailing" id="a6P-6Y-OsN"/>
+                    <constraint firstItem="KkQ-dB-Qao" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cgq-Ul-APC"/>
+                    <constraint firstItem="3L9-sv-0BW" firstAttribute="top" secondItem="KkQ-dB-Qao" secondAttribute="bottom" constant="2" id="n2V-5Q-1qk"/>
+                    <constraint firstItem="BFv-mb-BEX" firstAttribute="centerY" secondItem="kvm-Js-H4K" secondAttribute="centerY" id="sFJ-RW-kfp"/>
+                    <constraint firstItem="BFv-mb-BEX" firstAttribute="centerX" secondItem="kvm-Js-H4K" secondAttribute="centerX" id="ufy-0x-0in"/>
+                    <constraint firstItem="kvm-Js-H4K" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.3" id="vRN-KL-7Yb"/>
+                    <constraint firstItem="3L9-sv-0BW" firstAttribute="leading" secondItem="KkQ-dB-Qao" secondAttribute="leading" id="x5X-Zh-8b3"/>
+                    <constraint firstItem="BFv-mb-BEX" firstAttribute="height" secondItem="kvm-Js-H4K" secondAttribute="height" id="xuK-gS-sjf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageArtWork" destination="kvm-Js-H4K" id="hWz-Uo-1Mx"/>
+                <outlet property="mainView" destination="H2p-sc-9uM" id="Ibx-Dw-AK9"/>
+                <outlet property="mediaDescriptionOrartist" destination="3L9-sv-0BW" id="tJR-Sc-cGt"/>
+                <outlet property="mediaNameArtistOrTrack" destination="KkQ-dB-Qao" id="nEu-Sa-0TO"/>
+            </connections>
+            <point key="canvasLocation" x="207.24637681159422" y="206.91964285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
