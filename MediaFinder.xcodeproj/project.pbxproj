@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882848D72444DE5C00A4D8FF /* MusicCellNipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882848D52444DE5C00A4D8FF /* MusicCellNipTableViewCell.swift */; };
+		882848D82444DE5C00A4D8FF /* MusicCellNipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882848D62444DE5C00A4D8FF /* MusicCellNipTableViewCell.xib */; };
 		884590CC243CCA6200B16265 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884590C9243CCA6200B16265 /* Extension.swift */; };
 		884590CD243CCA6200B16265 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884590CB243CCA6200B16265 /* Constants.swift */; };
 		884590D6243CCA8900B16265 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884590CF243CCA8900B16265 /* UserDefault.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		1F5EF0128562FE55E9560166 /* Pods-MediaFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaFinder.release.xcconfig"; path = "Target Support Files/Pods-MediaFinder/Pods-MediaFinder.release.xcconfig"; sourceTree = "<group>"; };
 		2574D05110B72072B7FD37B1 /* Pods_MediaFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		882848D52444DE5C00A4D8FF /* MusicCellNipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCellNipTableViewCell.swift; sourceTree = "<group>"; };
+		882848D62444DE5C00A4D8FF /* MusicCellNipTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCellNipTableViewCell.xib; sourceTree = "<group>"; };
 		884590C9243CCA6200B16265 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		884590CB243CCA6200B16265 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		884590CF243CCA8900B16265 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 			path = SqLite;
 			sourceTree = "<group>";
 		};
+		882848D92444DE6400A4D8FF /* Music Nip */ = {
+			isa = PBXGroup;
+			children = (
+				882848D52444DE5C00A4D8FF /* MusicCellNipTableViewCell.swift */,
+				882848D62444DE5C00A4D8FF /* MusicCellNipTableViewCell.xib */,
+			);
+			path = "Music Nip";
+			sourceTree = "<group>";
+		};
 		884590C8243CCA6200B16265 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,18 +152,19 @@
 		884590E8243CCB6100B16265 /* View Nip */ = {
 			isa = PBXGroup;
 			children = (
-				884590EC243CCB6100B16265 /* Media Nip */,
+				882848D92444DE6400A4D8FF /* Music Nip */,
+				884590EC243CCB6100B16265 /* Movie Nip */,
 			);
 			path = "View Nip";
 			sourceTree = "<group>";
 		};
-		884590EC243CCB6100B16265 /* Media Nip */ = {
+		884590EC243CCB6100B16265 /* Movie Nip */ = {
 			isa = PBXGroup;
 			children = (
 				884590ED243CCB6100B16265 /* MediaCellNip.swift */,
 				884590EE243CCB6100B16265 /* MediaCellNip.xib */,
 			);
-			path = "Media Nip";
+			path = "Movie Nip";
 			sourceTree = "<group>";
 		};
 		884590F3243CCB9E00B16265 /* Controller */ = {
@@ -287,6 +301,7 @@
 				884590E6243CCB2400B16265 /* Main.storyboard in Resources */,
 				884590E7243CCB2400B16265 /* Authontication.storyboard in Resources */,
 				884590E5243CCB2400B16265 /* LaunchScreen.storyboard in Resources */,
+				882848D82444DE5C00A4D8FF /* MusicCellNipTableViewCell.xib in Resources */,
 				884590F2243CCB6100B16265 /* MediaCellNip.xib in Resources */,
 				884590DE243CCAAE00B16265 /* Assets.xcassets in Resources */,
 			);
@@ -355,6 +370,7 @@
 				884590D8243CCA8900B16265 /* User_SqLite.swift in Sources */,
 				884590F1243CCB6100B16265 /* MediaCellNip.swift in Sources */,
 				884590DB243CCA8900B16265 /* User.swift in Sources */,
+				882848D72444DE5C00A4D8FF /* MusicCellNipTableViewCell.swift in Sources */,
 				884590CC243CCA6200B16265 /* Extension.swift in Sources */,
 				884590CD243CCA6200B16265 /* Constants.swift in Sources */,
 			);

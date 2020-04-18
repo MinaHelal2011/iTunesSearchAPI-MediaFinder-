@@ -17,6 +17,7 @@ protocol Delegate {
 class MapVC: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var locationInformationView: UIView!
     
     let locationManager = CLLocationManager()
     var previousLocation: CLLocation?
@@ -26,6 +27,9 @@ class MapVC: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self as MKMapViewDelegate
         checkLocationServices()
+    }
+    override func viewDidLayoutSubviews() {
+        locationInformationView.roundCorners(cornerRadius: 40)
     }
     
     @IBAction func saveLocationButtom(_ sender: UIButton) {

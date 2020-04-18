@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="MusicCellNipTableViewCell" customModule="MediaFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="348" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="348" height="90.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mH8-54-C14">
+                        <rect key="frame" x="78.5" y="0.5" width="87" height="89.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlX-On-ie0">
+                        <rect key="frame" x="167.5" y="2" width="182.5" height="24"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                        <color key="textColor" red="0.95686274510000002" green="0.73142461960000005" blue="0.15109655459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWi-77-rru" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                        <rect key="frame" x="167.5" y="26" width="182.5" height="18"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2X-1U-TE7">
+                        <rect key="frame" x="13" y="18" width="52.5" height="54.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUm-AP-VEU">
+                        <rect key="frame" x="13" y="18" width="52.5" height="54.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i06-9c-vro">
+                        <rect key="frame" x="78.5" y="0.5" width="87" height="89.5"/>
+                        <connections>
+                            <action selector="bouncingImageButtom:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Ie-vn-SPI"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="UWi-77-rru" firstAttribute="trailing" secondItem="BlX-On-ie0" secondAttribute="trailing" id="0Z3-H4-jI4"/>
+                    <constraint firstItem="q2X-1U-TE7" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.225" id="4cW-so-GRA"/>
+                    <constraint firstItem="UWi-77-rru" firstAttribute="top" secondItem="BlX-On-ie0" secondAttribute="bottom" id="62J-Tp-MZZ"/>
+                    <constraint firstItem="oUm-AP-VEU" firstAttribute="centerY" secondItem="q2X-1U-TE7" secondAttribute="centerY" id="9zz-NP-xvS"/>
+                    <constraint firstItem="oUm-AP-VEU" firstAttribute="centerX" secondItem="q2X-1U-TE7" secondAttribute="centerX" id="FNJ-pr-Hjn"/>
+                    <constraint firstItem="i06-9c-vro" firstAttribute="width" secondItem="mH8-54-C14" secondAttribute="width" id="Fxh-wN-GyE"/>
+                    <constraint firstItem="mH8-54-C14" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HUW-J5-EeJ"/>
+                    <constraint firstItem="mH8-54-C14" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.7" id="Lv2-yN-Cjd"/>
+                    <constraint firstAttribute="trailing" secondItem="BlX-On-ie0" secondAttribute="trailing" constant="-2" id="RAt-Id-40t"/>
+                    <constraint firstItem="oUm-AP-VEU" firstAttribute="width" secondItem="q2X-1U-TE7" secondAttribute="width" id="SVL-FL-Lci"/>
+                    <constraint firstItem="BlX-On-ie0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="V2d-57-HXU"/>
+                    <constraint firstItem="mH8-54-C14" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="XvT-K2-1fM"/>
+                    <constraint firstItem="BlX-On-ie0" firstAttribute="leading" secondItem="mH8-54-C14" secondAttribute="trailing" constant="2" id="YES-1i-c1j"/>
+                    <constraint firstItem="UWi-77-rru" firstAttribute="leading" secondItem="BlX-On-ie0" secondAttribute="leading" id="bTR-rV-6I9"/>
+                    <constraint firstItem="mH8-54-C14" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.99" id="bX8-yT-7UY"/>
+                    <constraint firstItem="i06-9c-vro" firstAttribute="height" secondItem="mH8-54-C14" secondAttribute="height" id="eVd-Hw-7Rz"/>
+                    <constraint firstItem="q2X-1U-TE7" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.6" id="fqk-FC-iHR"/>
+                    <constraint firstItem="oUm-AP-VEU" firstAttribute="height" secondItem="q2X-1U-TE7" secondAttribute="height" id="ghR-3S-GYm"/>
+                    <constraint firstItem="q2X-1U-TE7" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.15" id="o45-Ue-qDT"/>
+                    <constraint firstItem="i06-9c-vro" firstAttribute="centerX" secondItem="mH8-54-C14" secondAttribute="centerX" id="oqj-nE-PUm"/>
+                    <constraint firstItem="i06-9c-vro" firstAttribute="centerY" secondItem="mH8-54-C14" secondAttribute="centerY" id="rnr-ve-TO9"/>
+                    <constraint firstItem="q2X-1U-TE7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xPq-m5-buq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageArtWork" destination="mH8-54-C14" id="oar-x5-6ZJ"/>
+                <outlet property="mediaDescriptionOrartist" destination="UWi-77-rru" id="Lla-9a-SC4"/>
+                <outlet property="mediaNameArtistOrTrack" destination="BlX-On-ie0" id="gE6-cI-mL4"/>
+                <outlet property="musicIndexRowLabel" destination="oUm-AP-VEU" id="82j-or-fUU"/>
+                <outlet property="musicView" destination="H2p-sc-9uM" id="k4Q-L1-i8E"/>
+                <outlet property="playerView" destination="q2X-1U-TE7" id="I8I-SR-kgV"/>
+            </connections>
+            <point key="canvasLocation" x="39.130434782608695" y="50.558035714285715"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -24,9 +24,10 @@ class FavouriteMovieVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         profileimage()
-        tabledelegate()
+        delegates()
         hideKeyboardWhenTappedAround()
         DefaultMedia()
+        navigationItem.hidesSearchBarWhenScrolling = true
     }
     
     @IBAction func segment(_ sender: UISegmentedControl) {
@@ -49,11 +50,13 @@ class FavouriteMovieVC: UIViewController {
     
     // MARK: - Functional
     
-    private func tabledelegate() {
+    private func delegates() {
         searchTerm.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: VCs.mediaCellNip, bundle: nil), forCellReuseIdentifier: VCs.mediaCellNip)
+        tableView.register(UINib(nibName: VCs.musicCellNipTableViewCell, bundle: nil), forCellReuseIdentifier: VCs.musicCellNipTableViewCell)
+
     }
     
     private func profileimage() {
@@ -66,9 +69,10 @@ class FavouriteMovieVC: UIViewController {
         guard let term = searchTerm.text, !term.isEmpty else { validationAlert("Search is Empty"); return false }
         return true
     }
-    private func DefaultMedia () {
+
+    private func DefaultMedia() {
         if arrMedia.count == 0 && DefaultUser.Shared.idInsertMedia != 0 {
-           self.arrMedia = MediaDB.Shared.getMedia(DefaultUser.Shared.idInsertMedia)
+            self.arrMedia = MediaDB.Shared.getMedia(DefaultUser.Shared.idInsertMedia)
         }
     }
     
@@ -107,10 +111,18 @@ extension FavouriteMovieVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MediaCellNip") as! MediaCellNip
         let result = arrMedia[indexPath.row]
-        cell.SetData(result)
-        return cell
+        if result.getType() == .music {
+            let cell = tableView.dequeueReusableCell(withIdentifier: VCs.musicCellNipTableViewCell) as? MusicCellNipTableViewCell
+            cell?.musicIndexRowLabel.text = "\(indexPath.row + 1)"
+            cell!.SetData(result)
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: VCs.mediaCellNip) as! MediaCellNip
+            cell.SetData(result)
+            return cell
+        }
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -119,7 +131,11 @@ extension FavouriteMovieVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if arrMedia[indexPath.row].getType() == .music {
+            return 80
+        }else {
+            return 163
+        }
     }
 }
 
@@ -132,5 +148,9 @@ extension FavouriteMovieVC: UISearchBarDelegate {
         } else {
             validationAlert("Search is Empty")
         }
+    }
+
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        print("click") // TODO:- add History
     }
 }

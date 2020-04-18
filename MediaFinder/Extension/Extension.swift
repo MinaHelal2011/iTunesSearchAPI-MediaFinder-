@@ -50,4 +50,15 @@ extension UIViewController {
         let ageRegex = "[0-9]{2,2}"
         return NSPredicate(format: "SELF MATCHES %@", ageRegex).evaluate(with: age)
     }
+    
 }
+extension UIView  {
+    func roundCorners(cornerRadius: Double) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = path.cgPath
+        self.layer.mask = maskLayer
+    }
+}
+

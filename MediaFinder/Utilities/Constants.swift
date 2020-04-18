@@ -45,5 +45,6 @@ struct VCs {
     static let mapVC = "MapVC"
     static let favouriteMovieVC = "FavouriteMovieVC"
     static let mediaCellNip = "MediaCellNip"
+    static let musicCellNipTableViewCell = "MusicCellNipTableViewCell"
     static let profileVC = "ProfileVC"
 }
