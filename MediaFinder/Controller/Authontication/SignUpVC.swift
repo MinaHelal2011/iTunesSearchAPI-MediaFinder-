@@ -22,32 +22,32 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var addressLabel1: UITextField!
     
     var user = User()
-//    var userDB = UserDB()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
     }
-    
+
+    // MARK: StatusBar Light
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
     }
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
+    // MARK: Functional
     @IBAction func getAddressButtomPressed(_ sender: Any) {
         let mapVC = UIStoryboard(name: SBs.authontication, bundle: nil).instantiateViewController(withIdentifier: VCs.mapVC) as! MapVC
         mapVC.delegat = self
         self.present(mapVC, animated: false, completion: nil)
     }
-    
+
     @IBAction func backButtom(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+
     @IBAction func SignUpButtomPressed(_ sender: UIButton) {
         if isValidData() {
             print(user.email!)
@@ -97,14 +97,15 @@ class SignUpVC: UIViewController {
         
         self.present(actionSheet, animated: true, completion: nil)
     }
-    
+
+    // MARK: Private function
     private func goToSignInScreen() {
         let signInVC = UIStoryboard(name: SBs.authontication, bundle: nil).instantiateViewController(withIdentifier: VCs.signInVC) as! SignInVC
         self.present(signInVC, animated: false, completion: nil)
     }
 }
 
-// Regux
+// MARK: Regux
 extension SignUpVC {
     
     private func isValidData() -> Bool{
@@ -174,6 +175,7 @@ extension SignUpVC {
     
 }
 
+// MARK: ImagePicker
 extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -187,6 +189,7 @@ extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     }
 }
 
+// MARK: Delegate
 extension SignUpVC: Delegate {
     func takeLocation(_ address: String) {
         addressLabel1.text  = address

@@ -29,6 +29,15 @@ class FavouriteMovieVC: UIViewController {
         DefaultMedia()
         navigationItem.hidesSearchBarWhenScrolling = true
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBAction func segment(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -49,7 +58,6 @@ class FavouriteMovieVC: UIViewController {
     }
     
     // MARK: - Functional
-    
     private func delegates() {
         searchTerm.delegate = self
         tableView.dataSource = self

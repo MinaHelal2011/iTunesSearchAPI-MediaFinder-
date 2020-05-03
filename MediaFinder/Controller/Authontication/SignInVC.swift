@@ -17,6 +17,14 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBAction func SignInButtomPressed(_ sender: UIButton) {
         if isValid(){

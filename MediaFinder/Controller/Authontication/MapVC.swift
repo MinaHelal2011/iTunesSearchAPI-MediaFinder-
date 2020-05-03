@@ -28,6 +28,16 @@ class MapVC: UIViewController {
         mapView.delegate = self as MKMapViewDelegate
         checkLocationServices()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLayoutSubviews() {
         locationInformationView.roundCorners(cornerRadius: 40)
     }

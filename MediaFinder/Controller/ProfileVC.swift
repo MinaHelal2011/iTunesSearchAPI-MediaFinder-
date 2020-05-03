@@ -26,6 +26,15 @@ class ProfileVC: UIViewController {
         user =  UserDB.Shared.getUser(DefaultUser.Shared.idUserLogged)!
         presentProfileData()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBAction func LogOutButtomPressed(_ sender: Any) {
         DefaultUser.Shared.isLoggedIn = false
